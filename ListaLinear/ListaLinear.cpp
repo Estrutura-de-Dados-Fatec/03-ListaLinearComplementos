@@ -122,6 +122,24 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	
+		int valor;
+		cout << "digite o numero que deseja excluir";
+		cin >> valor;
+		int cal = posicaoElemento(valor);
+
+		if (cal != -1) {
+			lista[cal] = 0;
+			nElementos--;
+			for (int n = 0; n < nElementos; n++) {
+				lista[cal] = lista[cal + 1];
+				cal++;
+			}
+			cout << "o numero escolhido ja foi excluido!!!!" << endl;
+		}
+		else {
+			cout << "nao existe esse elemento" << endl;
+		}
 
 
 }

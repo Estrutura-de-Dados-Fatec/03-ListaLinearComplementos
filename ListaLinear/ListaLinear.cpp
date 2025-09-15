@@ -70,7 +70,7 @@ void menu()
 void inicializar()
 {
 	nElementos = 0;
-	cout << "Lista inicializada \n";
+	cout << "Lista inicializada\n";
 
 }
 

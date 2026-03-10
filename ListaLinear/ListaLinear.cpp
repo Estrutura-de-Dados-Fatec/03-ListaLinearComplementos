@@ -70,7 +70,7 @@ void menu()
 void inicializar()
 {
 	nElementos = 0;
-	cout << "Lista inicializada \n";
+	cout << "Lista inicializada\n";
 
 }
 
@@ -122,8 +122,27 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	if (nElementos == 0) {
+		cout << "A lista esta vazia, nada a excluir." << endl;
+		return;
+	}
 
+	int valor;
+	cout << "Digite o elemento que deseja excluir: ";
+	cin >> valor;
 
+	int pos = posicaoElemento(valor);
+
+	if (pos == -1) {
+		cout << "Elemento nao encontrado." << endl;
+	}
+	else {
+		for (int i = pos; i < nElementos - 1; i++) {
+			lista[i] = lista[i + 1];
+		}
+		nElementos--; 
+		cout << "Elemento excluido com sucesso." << endl;
+	}
 }
 
 void buscarElemento()
